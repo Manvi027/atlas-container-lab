@@ -8,6 +8,10 @@ const appEnv = process.env.APP_ENV;
 const appPort = process.env.APP_PORT;
 
 // APP_ENV must be provided at run time
+if(!appPort) {
+  console.error("Error: APP_PORT is not set");
+  process.exit(1);
+}
 if (!appEnv) {
   console.error("Error: APP_ENV is not set");
   process.exit(1);
